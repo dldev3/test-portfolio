@@ -1,7 +1,7 @@
 import React from 'react';
 import './cursor.scss';
-import { useState } from 'react';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 const Cursor = () => {
 
@@ -19,12 +19,10 @@ const Cursor = () => {
         }
     }, []);
 
-    console.log(position);
+    
 
     return (
-        <div className='cursor'>
-
-        </div>
+        <motion.div className='cursor' animate={{ x: position.x, y: position.y }}></motion.div>
     )
 }
 
